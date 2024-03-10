@@ -18,19 +18,27 @@ type Props = {
 
 export default function RootLayout({children}: Props) {
   return (
-    <>
-      <Head>
-        <title>charts-sample</title>
-      </Head>
-      <div className={'flex min-h-100vh'}>
-        さいど
-  
-        <div className={'flex flex-col flex-grow bg-gray-800'}>
-          さいど？
-
-          <main className={'bg-gray-800 flex-grow p-20'}>{children}</main>
-        </div>
+<>
+  <Head>
+    <title>charts-sample</title>
+  </Head>
+  <div className="flex h-screen">
+    {/* サイドバー */}
+    <aside className="bg-gray-800 text-white w-64 flex-shrink-0">
+      <div className="p-4">
+        <h1 className="text-lg font-semibold">サイドバー</h1>
+        <ul className="mt-4">
+          <li><a href="/" className="block py-2">TOPPAGE</a></li>
+          <li><a href="/schedule" className="block py-2">スケジュール確認</a></li>
+          <li><a href="/result" className="block py-2">成績入力</a></li>
+        </ul>
       </div>
-    </>
+    </aside>
+    {/* メインコンテンツ */}
+    <main className="flex-1 bg-gray-200">
+      {children}
+    </main>
+  </div>
+</>
   );
 }
