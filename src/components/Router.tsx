@@ -11,7 +11,7 @@ const RootLink: React.FC<Props> =({ root, displayWord })  => {
   return (
         <ul>
           <li>
-            <Link href={root}>{displayWord}</Link>
+            <Link href={root} >{displayWord}</Link>
           </li>
         </ul>
 

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import RootLink from "@/components/Router";
 import React from "react";
+import OnClickRooting from "@/components/OnClickRooting";
+import '@/app/globals.css';
+
 
 export const metadata: Metadata = {
   title: "scheduler_for_mj",
@@ -18,22 +21,22 @@ export default function RootLayout({children}:Props) {
 <html lang="ja">
   <body>
     <div className="flex">
-      <div className="flex justify-center items-center">
-        <h3>menu</h3>
-        <RootLink
+      <div className="w-1/6 grid grid-cols-1 text-center bg-[#EEFFFF]">
+        <h1 className="text-[24px]">menu</h1>
+        <OnClickRooting
         root = "/"
         displayWord="TOPPAGE"
         />
-        <RootLink
+        <OnClickRooting
         root = "/schedule"
         displayWord="schedule"
         />
-        <RootLink
+        <OnClickRooting
         root = "/result"
         displayWord="result"
         />
       </div>
-      <div className="bg-gray-200">
+      <div className="w-5/6 bg-[#BAD3FF]">
         {children}
       </div>
     </div>
