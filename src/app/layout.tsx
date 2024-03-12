@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import RootLink from "@/components/Router";
 import React from "react";
-import OnClickRooting from "@/components/OnClickRooting";
+import MenuBar from "@/components/MenuBar";
 import '@/app/globals.css';
 
 
@@ -20,25 +19,9 @@ export default function RootLayout({children}:Props) {
 <>
 <html lang="ja">
   <body>
-    <div className="flex">
-      <div className="w-1/6 grid grid-cols-1 text-center bg-[#EEFFFF]">
-        <h1 className="text-[24px]">menu</h1>
-        <OnClickRooting
-        root = "/"
-        displayWord="TOPPAGE"
-        />
-        <OnClickRooting
-        root = "/schedule"
-        displayWord="schedule"
-        />
-        <OnClickRooting
-        root = "/result"
-        displayWord="result"
-        />
-      </div>
-      <div className="w-5/6 bg-[#BAD3FF]">
+    <div className="text-center">
+        <MenuBar />
         {children}
-      </div>
     </div>
   </body>
 </html>
