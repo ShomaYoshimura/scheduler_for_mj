@@ -44,7 +44,7 @@ export default function Home() {
             {sheetData.map((item, rowIndex) => (
               <tr key={rowIndex}>
                 {Object.values(item).map((value, index) => (
-                  <td key={index}>{value}</td>
+                  <td key={index}>{String(value)}</td>
                 ))}
               </tr>
             ))}
