@@ -20,10 +20,10 @@ export default function Menu () {
             root = "/"
             displayWord="TOPPAGE"
             />
-            <OnClickRooting
+            {/* <OnClickRooting
             root = "/schedule"
             displayWord="schedule"
-            />
+            /> */}
             <OnClickRooting
             root = "/result"
             displayWord="result"
