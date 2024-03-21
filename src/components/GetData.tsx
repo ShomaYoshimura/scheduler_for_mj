@@ -6,9 +6,10 @@ import Loading from './Loading';
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [sheetData, setSheetData] = useState([]);
-  const url = process.env.NEXT_PUBLIC_GET_DATA_API
+  const url: string | undefined = process.env.NEXT_PUBLIC_GET_DATA_API
 
   useEffect(() => {
+    if(url != undefined){
     const fetchData = async () => {
         setLoading(true);
         const response = await fetch(url);
@@ -18,7 +19,9 @@ export default function Home() {
     };
 
     fetchData();
-  }, []);
+  }else{
+    console.error('URL is undefined.');
+    }}, [])
   if (loading) {
     return (<>
     <div className='flex justify-center items-center p-5'><Loading /></div>
